@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 document.getElementById("arraySortDiv").onclick = function() {
-
+    window.location.href = "https://nilslambertz.github.io/SortVisualization/";
 }
 
 function refresh() {
