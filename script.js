@@ -7,10 +7,7 @@ document.getElementById("arraySortDiv").onclick = function() {
 }
 
 function refresh() {
-    document.getElementById("topBar").style.opacity = 0;
-    document.getElementById("divider").style.width = "0px";
-    //$(".contentBox").css("opacity", 0);
-    loadPage();
+    location.reload();
 }
 
 function loadPage() {
