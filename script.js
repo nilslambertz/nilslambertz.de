@@ -25,6 +25,6 @@ function loadPage() {
         box.delay(d).animate({
             opacity: 1
         })
-        d+=200;
+        d+=300;
     })
 }
