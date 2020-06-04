@@ -26,6 +26,11 @@ body {
     height: 100%;
     float: left;
     transition: width 0.5s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .collapseText {
@@ -52,6 +57,65 @@ body {
     height: 100%;
     float: left;
     transition: width 0.5s;
+}
+
+.contentBox {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentDiv {
+    width: 90%;
+    height: 130px;
+    transition: width 0.3s;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contentDiv:hover {
+    width: calc(90% + 20px);
+    transition: width 0.3s;
+}
+
+.contentDiv:hover .contentTitle {
+    color: #0063ac;
+    transition: color 0.2s;
+}
+
+.contentDiv .contentTitle {
+    font-size: 40px;
+    padding-left: 10px;
+    font-weight: bold;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    transition: color 0.2s;
+}
+
+.contentDiv hr {
+    margin: 5px;
+}
+
+.contentDiv .contentDescription {
+    font-size: 20px;
+    padding-left: 10px;
+    overflow: auto;
+}
+
+.contentDiv .contentHighlight {
+    color: black;
+    transition: color 0.2s;
+}
+
+.contentDiv:hover .contentHighlight {
+    color: red;
+    transition: color 0.2s;
 }
 
 @media screen and (max-width: 800px){
