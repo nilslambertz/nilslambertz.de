@@ -6,6 +6,11 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 body {
     position:fixed;
     left:0;
@@ -35,7 +40,7 @@ body {
 
 .collapseText {
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, display 0.3s;
 }
 
 #titleDiv {
@@ -49,6 +54,39 @@ body {
 
 #leftNav hr {
     margin: 1px 5px 10px 5px;
+}
+
+
+.leftNavElem {
+    margin-left: 10px;
+    height: 50px;
+    width: calc(100% - 20px);
+    line-height: 50px;
+    font-size: 35px;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 2px;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: background-color 0.3s, width 0.3s, margin-left 0.3s;
+}
+
+.leftNavElem:hover {
+    background-color: #8bb58b;
+    transition: background-color 0.3s;
+}
+
+.leftNavText {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.leftNavElem img {
+    margin-top: -5px;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
 }
 
 #content {
@@ -73,6 +111,7 @@ body {
     transition: width 0.3s;
     border: 1px solid white;
     border-radius: 5px;
+    overflow: auto;
     cursor: pointer;
 }
 
@@ -103,9 +142,8 @@ body {
 }
 
 .contentDiv .contentDescription {
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 10px;
-    overflow: auto;
 }
 
 .contentDiv .contentHighlight {
@@ -124,8 +162,31 @@ body {
         transition: width 0.5s;
     }
 
+    .leftNavElem {
+        border: 0;
+        width: 40px;
+        margin-left: 5px;
+        transition: width 0.3s, margin-left 0.3s;
+    }
+    .leftNavElem:hover {
+        background: none;
+    }
+
+    .leftNavElem img {
+        margin-left: 0;
+    }
+
+    .leftNavText {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        transition: opacity 0.3s;
+    }
+
     .collapseText {
         opacity: 0;
+        width: 0;
+        height: 0;
         transition: opacity 0.3s;
     }
 
@@ -133,6 +194,4 @@ body {
         width: calc(100% - 51px);
         transition: width 0.5s;
     }
-
-
 }
