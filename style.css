@@ -24,9 +24,10 @@ body {
 }
 
 #leftNav {
-    background-color: #b0b0b0;
+   /*background-color: #b0b0b0;*/
+    background: linear-gradient(to bottom, #93a5b3, #a9bacd);
     width: 250px;
-    border-right: 1px solid white;
+    border-right: 1px solid #ffffff;
     color: black;
     height: 100%;
     float: left;
