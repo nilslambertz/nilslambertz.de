@@ -23,6 +23,11 @@ body {
     bottom:0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 #content {
     overflow: auto;
 }
@@ -71,6 +76,12 @@ body {
     flex-direction: column;
 }
 
+.opacityDiv {
+    all: inherit;
+    width: 100vw;
+    background: rgba(0,0,0,0.5);
+}
+
 .titleDiv {
     font-size: 60px;
     height: 100px;
@@ -85,8 +96,13 @@ body {
 }
 
 #arraySortDiv {
-    background-color: red;
+    background: url("arraySortingPicture.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
+
 
 #testDiv {
     background-color: darkgreen;
