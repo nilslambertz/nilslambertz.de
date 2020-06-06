@@ -28,4 +28,12 @@ $('document').ready(function () {
     $("#arraySortScrollDown").on('click', function(e) {
         document.querySelector('#testDiv').scrollIntoView({ behavior: 'smooth' })
     })
+
+    $("#arraySortScrollUp").on('click', function(e) {
+        document.querySelector('#welcomeDiv').scrollIntoView({ behavior: 'smooth' })
+    })
+
+    $("#testDivScrollUp").on('click', function(e) {
+        document.querySelector('#arraySortDiv').scrollIntoView({ behavior: 'smooth' })
+    })
 })
