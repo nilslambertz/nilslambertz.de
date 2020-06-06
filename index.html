@@ -10,17 +10,26 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="shadow">
-       <!-- <img src="shadow.png" style="width: 100vw; height: 100vh">-->
-    </div>
+    <div id="shadow"></div>
     <div id="content">
         <div id="welcomeDiv" class="contentDiv">
             <div id="welcomeTitle" class="titleDiv">
-                <span id="titleSpan"></span><span id="typingSpan" style="opacity: 0">_</span>
+                <span id="titleSpan"></span><div id="typingDiv"
+                                                 style="display: inline-block; overflow: hidden; height: 60px">_</div>
             </div>
             <div id="welcomeDescription" class="descriptionDiv" style="opacity: 0">
                 Moin Servus Moin
             </div>
+            <div id="welcomeScrollDown" class="scrollDown"><img src="scrollDownArrow.png" style="height: 50px; width: 50px"/></div>
+        </div>
+
+        <div id="arraySortDiv" class="contentDiv">
+            mooin
+            <div id="arraySortScrollDown" class="scrollDown"><img src="scrollDownArrow.png" style="height: 50px; width: 50px"/></div>
+        </div>
+
+        <div id="testDiv" class="contentDiv">
+            hey
         </div>
     </div>
 </body>

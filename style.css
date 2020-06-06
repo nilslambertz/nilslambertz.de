@@ -2,8 +2,15 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: auto;
     width: 100%;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -16,8 +23,21 @@ body {
     bottom:0;
 }
 
+#content {
+    overflow: auto;
+}
+
+.scrollDown {
+    position: absolute;
+    margin-top: calc(50vh - 30px);
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
 #shadow {
-    position:fixed;
+    position: fixed;
     left:0;
     top:0;
     margin: 0;
@@ -35,23 +55,18 @@ body {
 }
 
 .contentDiv {
-    width: 100vw;
+    width: auto;
     height: 100vh;
     align-items: center;
     justify-content: center;
     color: white;
     display: flex;
     flex-direction: column;
-    background-color: grey;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .titleDiv {
     font-size: 60px;
+    height: 100px;
 }
 
 .descriptionDiv {
@@ -59,4 +74,13 @@ body {
 }
 
 #welcomeDiv {
+    background-color: #255583;
+}
+
+#arraySortDiv {
+    background-color: red;
+}
+
+#testDiv {
+    background-color: darkgreen;
 }
