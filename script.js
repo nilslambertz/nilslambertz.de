@@ -39,3 +39,26 @@ $('document').ready(function () {
         document.querySelector('#arraySortDiv').scrollIntoView({ behavior: 'smooth' })
     })
 })
+
+let colors = ["#4e4d4d", "#ff00e6", "#ff0000", "#f87100", "#14f100", "#00f1f1"]
+let s = 0;
+document.addEventListener('keydown', function(e) {
+    console.log("e.key = " + e.key + "; state = " + s);
+    if(e.key == "1" && s == 0) {
+        s = 1;
+    } else {
+        if(e.key == "3" && (s == 1 || s == 2)) {
+            s++;
+        } else {
+            if(e.key == "7" && s == 3) {
+                s = 0;
+                let div = document.getElementById("welcomeDiv")
+                let color = colors.splice(Math.floor(Math.random() * colors.length), 1)[0];
+                colors.push(div.style.backgroundColor);
+                div.style.backgroundColor = color;
+            } else {
+                s = 0;
+            }
+        }
+    }
+})
