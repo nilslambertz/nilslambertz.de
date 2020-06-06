@@ -1,9 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: auto;
+    width: auto;
     overflow: auto;
-    width: 100%;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
     -webkit-touch-callout: none;
@@ -16,6 +16,7 @@ html, body {
 body {
     position:fixed;
     left:0;
+    overflow-x: hidden;
     top:0;
     margin: 0;
     padding: 0;
@@ -25,27 +26,41 @@ body {
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #content {
     overflow: auto;
+    overflow-x: hidden;
+    width: auto;
 }
 
 .scrollDown {
     position: absolute;
     margin-top: calc(50vh - 30px);
+    cursor: pointer;
     width: 100%;
-    height: 50px;
     text-align: center;
+}
+
+.scrollDown img {
+    height: 50px;
+    width: 50px
 }
 
 .scrollUp {
     position: absolute;
     margin-top: calc(30px - 50vh);
     padding: 0;
+    width: 100%;
     height: 50px;
+    cursor: pointer;
     text-align: center;
+}
+
+.scrollUp img {
+    height: 50px;
+    width: 50px
 }
 
 #shadow {
@@ -57,7 +72,6 @@ a {
     right:0;
     bottom:0;
     height: 100vh;
-    width: 100vw;
     pointer-events: none;
     background: url("shadow.png") no-repeat center center fixed;
     -webkit-background-size: 100% 100%;
@@ -85,14 +99,57 @@ a {
 .titleDiv {
     font-size: 60px;
     height: 100px;
+    line-height: 100px;
+}
+
+.linkDiv {
+    background-color: #016701;
+    height: 60px;
+    font-size: 30px;
+    vertical-align: middle;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border: 1px solid white;
+    color: #999999;
+    transition: color 0.3s;
+}
+
+.linkDiv:hover {
+    color: white;
+    transition: color 0.3s;
+}
+
+.socialsDiv {
+    height: 70px;
+    line-height: 70px;
+}
+
+.socialsDiv img {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
 }
 
 .descriptionDiv {
     font-size: 20px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.highlightSpan {
+    color: #ff8d1f;
 }
 
 #welcomeDiv {
     background-color: #255583;
+}
+
+#typingDiv {
+    display: inline-block;
+    overflow: hidden;
+    height: 74px;
 }
 
 #arraySortDiv {

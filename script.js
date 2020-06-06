@@ -1,11 +1,13 @@
 $('document').ready(function () {
     let title = "nilslambertz.de";
     let titleArr = title.split('');
-    setInterval(function () {
+    let int = setInterval(function () {
         let typingDiv = $("#typingDiv");
         if(titleArr.length === 0) {
+            clearInterval(int);
             typingDiv.animate({opacity: 0, width: 0}, 500);
             $("#welcomeDescription").delay(500).animate({opacity: 1}, 500);
+            $("#welcomeSocials").delay(500).animate({opacity: 1}, 500);
             return;
         }
         let op = 0;
