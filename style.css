@@ -35,6 +35,15 @@ a {
     width: auto;
 }
 
+#blackDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
 .scrollDown {
     position: absolute;
     margin-top: calc(50vh - 30px);
@@ -98,21 +107,22 @@ a {
 
 .titleDiv {
     font-size: 60px;
-    height: 100px;
-    line-height: 100px;
+    height: 60px;
+    margin-bottom: 40px;
 }
 
 .linkDiv {
     background-color: #016701;
     height: 60px;
+    line-height: 60px;
     font-size: 30px;
     vertical-align: middle;
-    line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 15px;
     border: 1px solid white;
     color: #bebebe;
+    margin-bottom: 30px;
     transition: color 0.3s;
 }
 
@@ -122,8 +132,7 @@ a {
 }
 
 .socialsDiv {
-    height: 70px;
-    line-height: 70px;
+    margin-bottom: 40px;
 }
 
 .socialsDiv img {
@@ -134,8 +143,7 @@ a {
 
 .descriptionDiv {
     font-size: 20px;
-    height: 70px;
-    line-height: 70px;
+    margin-bottom: 30px;
 }
 
 .highlightSpan {
@@ -147,10 +155,17 @@ a {
     transition: background-color 1s;
 }
 
+#titleText {
+    display: inline-block;
+    height: 100%;
+    font-size: 60px;
+}
+
 #typingDiv {
     display: inline-block;
+    height: 100%;
+    font-size: 60px;
     overflow: hidden;
-    height: 74px;
 }
 
 #arraySortDiv {
