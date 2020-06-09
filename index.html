@@ -8,10 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js" defer></script>
+    <script src="snakeScript.js" defer></script>
 </head>
 <body>
     <noscript>
-        <h1><span style="color: red">Bitte JavaScript aktivieren!</span></h1>
+        <div style="position: fixed; z-index: -1"><h1><span style="color: red">Bitte JavaScript aktivieren!</span></h1></div></h1>
     </noscript>
     <div id="blackDiv"></div>
     <div id="shadow"></div>
@@ -60,10 +61,11 @@
             </div>
         </div>
 
-        <div id="testDiv" class="contentDiv">
-            hey
-            <div id="testDivScrollUp" class="scrollUp">
-                <img src="scrollUpArrowWhite.png" style="height: 50px; width: 50px"/>
+        <div id="snakeDiv" class="contentDiv">
+            <div id="snakeGrid"></div>
+            <!--<div id="snakeText">xdsss</div>-->
+            <div id="snakeScrollUp" class="scrollUp">
+                <img src="scrollUpArrowWhite.png"/>
             </div>
         </div>
     </div>

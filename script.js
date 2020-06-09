@@ -5,6 +5,10 @@ $('document').ready(function () {
     $("#blackDiv").animate({opacity: 0}, 500);
 
     setTimeout(function() {
+        /* Scroll to snake */
+        document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
+        /* */
+
         document.body.removeChild(document.getElementById("blackDiv"));
         let int = setInterval(function () {
             let typingDiv = $("#typingDiv");
@@ -25,22 +29,22 @@ $('document').ready(function () {
             span.style.opacity = 0;
             span.innerText = titleArr.shift();
             document.getElementById("titleText").append(span);
-            $(span).animate({opacity: 1}, 200);
-        }, 400);
+            $(span).animate({opacity: 1}, 100);
+        }, 300);
 
         $("#welcomeScrollDown").on('click', function (e) {
             document.querySelector('#arraySortDiv').scrollIntoView({behavior: 'smooth'})
         })
 
         $("#arraySortScrollDown").on('click', function (e) {
-            document.querySelector('#testDiv').scrollIntoView({behavior: 'smooth'})
+            document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
         })
 
         $("#arraySortScrollUp").on('click', function (e) {
             document.querySelector('#welcomeDiv').scrollIntoView({behavior: 'smooth'})
         })
 
-        $("#testDivScrollUp").on('click', function (e) {
+        $("#snakeScrollUp").on('click', function (e) {
             document.querySelector('#arraySortDiv').scrollIntoView({behavior: 'smooth'})
         })
     }, 500);
