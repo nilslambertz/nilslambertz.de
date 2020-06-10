@@ -76,9 +76,9 @@ function snakeGame() {
 
         for(let i = 1; i < len; i++) {
             let x = tail[i];
-            snakeDivGrid[x[0]][x[1]].style.backgroundColor = "white";
+            snakeDivGrid[x[0]][x[1]].style.backgroundColor = "grey";
         }
-        snakeDivGrid[tail[0][0]][tail[0][1]].style.backgroundColor = "grey";
+        snakeDivGrid[tail[0][0]][tail[0][1]].style.backgroundColor = "white";
 
         let temp = [tail[0][0], tail[0][1]];
         let x = [temp[0], temp[1]];
@@ -158,6 +158,19 @@ function startGameClick() {
 }
 
 document.addEventListener('keydown', function(e) {
+    if(e.key === "Escape") {
+        if(!running) return;
+        clearInterval(interval);
+        document.getElementById("snakeOverlay").style.display = "table";
+        document.getElementById("snakeText").innerHTML = text;
+        $("#snakeOverlay").animate({opacity: 1}, 500);
+        running = false;
+    }
+
+    if(!isInView($("#snakeGrid"))) {
+        return;
+    }
+
     if(e.key === "w") {
         dir = 0;
         if(!running) {
@@ -182,11 +195,8 @@ document.addEventListener('keydown', function(e) {
             snakeGame();
         }
     }
-    if(e.key === "Escape") {
-        clearInterval(interval);
-        document.getElementById("snakeOverlay").style.display = "table";
-        document.getElementById("snakeText").innerHTML = text;
-        $("#snakeOverlay").animate({opacity: 1}, 500);
-        running = false;
-    }
 });
+
+function isInView(elem){
+    return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
+}
