@@ -118,7 +118,7 @@ function snakeGame() {
                 if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
                     clearInterval(interval);
                     running = false;
-                    document.getElementById("snakeText").innerHTML = "<span style='color: red'>Game over!</span>" + text;
+                    document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
                     $("#snakeOverlay").animate({opacity: 1}, 500);
                     return;
                 }
