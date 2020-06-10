@@ -6,7 +6,7 @@ $('document').ready(function () {
 
     setTimeout(function() {
         /* Scroll to snake */
-        document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
+        //document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
         /* */
 
         document.body.removeChild(document.getElementById("blackDiv"));
