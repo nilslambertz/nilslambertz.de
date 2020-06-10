@@ -33,6 +33,9 @@ function setupSnakeGrid(width, height) {
 // zeile, spalte
 function snakeGame() {
     $("#snakeOverlay").animate({opacity: 0}, 500);
+    setTimeout(function() {
+        document.getElementById("snakeOverlay").style.display = "none";
+    })
 
     //let i = Math.floor(Math.random() * width);
     //let j = Math.floor(Math.random() * height);
@@ -118,6 +121,7 @@ function snakeGame() {
                 if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
                     clearInterval(interval);
                     running = false;
+                    document.getElementById("snakeOverlay").style.display = "table";
                     document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
                     $("#snakeOverlay").animate({opacity: 1}, 500);
                     return;
@@ -147,6 +151,12 @@ function snakeGame() {
     }, int);
 }
 
+function startGameClick() {
+    if(!running) {
+        snakeGame();
+    }
+}
+
 document.addEventListener('keydown', function(e) {
     if(e.key === "w") {
         dir = 0;
@@ -174,6 +184,7 @@ document.addEventListener('keydown', function(e) {
     }
     if(e.key === "Escape") {
         clearInterval(interval);
+        document.getElementById("snakeOverlay").style.display = "table";
         document.getElementById("snakeText").innerHTML = text;
         $("#snakeOverlay").animate({opacity: 1}, 500);
         running = false;

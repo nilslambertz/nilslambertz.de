@@ -8,6 +8,13 @@
     font-size: 50px;
     vertical-align: middle;
     text-align: center;
+    transition: background-color 0.4s;
+}
+
+#snakeOverlay:hover {
+    background-color: rgba(84,84,84, 0.6);
+    cursor: pointer;
+    transition: background-color 0.4s;
 }
 
 #snakeText {

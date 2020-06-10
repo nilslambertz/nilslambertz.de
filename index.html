@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js" defer></script>
     <script src="snakeScript.js" defer></script>
+    <script src="eastereggScript.js" defer></script>
 </head>
 <body>
     <noscript>
@@ -64,7 +65,7 @@
 
         <div id="snakeDiv" class="contentDiv">
             <div id="snakeGrid"></div>
-            <div id="snakeOverlay">
+            <div id="snakeOverlay" onclick="startGameClick()">
                 <div id="snakeText">
                     Press <span class="highlightSpan">W</span>, <span class="highlightSpan">A</span>,
                     <span class="highlightSpan">S</span> or <span class="highlightSpan">D</span> to start

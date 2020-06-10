@@ -179,3 +179,14 @@ a {
 #snakeDiv {
     background-color: #ff5900;
 }
+
+
+@media (pointer:none), (pointer:coarse) {
+    #snakeDiv {
+        display: none;
+    }
+
+    #arraySortScrollDown {
+        display: none;
+    }
+}
