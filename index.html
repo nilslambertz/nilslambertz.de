@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nilslambertz.de</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="snakeStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js" defer></script>
@@ -63,7 +64,13 @@
 
         <div id="snakeDiv" class="contentDiv">
             <div id="snakeGrid"></div>
-            <!--<div id="snakeText">xdsss</div>-->
+            <div id="snakeOverlay">
+                <div id="snakeText">
+                    Press <span class="highlightSpan">W</span>, <span class="highlightSpan">A</span>,
+                    <span class="highlightSpan">S</span> or <span class="highlightSpan">D</span> to start
+                </div>
+            </div>
+            <div id="snakeKeys">W = up, A = left, S = down, D = right, ESC = stop</div>
             <div id="snakeScrollUp" class="scrollUp">
                 <img src="scrollUpArrowWhite.png"/>
             </div>

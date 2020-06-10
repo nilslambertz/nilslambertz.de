@@ -7,7 +7,13 @@ let item = [];
 let dir = 0;
 let running = false;
 let int = 200;
+let interval = null;
+let text = "";
 setupSnakeGrid(width, height);
+
+$('document').ready(function() {
+    text = document.getElementById("snakeText").innerHTML;
+})
 
 function setupSnakeGrid(width, height) {
     for (let i = 0; i < height; i++) {
@@ -26,6 +32,8 @@ function setupSnakeGrid(width, height) {
 
 // zeile, spalte
 function snakeGame() {
+    $("#snakeOverlay").animate({opacity: 0}, 500);
+
     //let i = Math.floor(Math.random() * width);
     //let j = Math.floor(Math.random() * height);
     let posI = Math.floor(Math.random() * (height - 1));
@@ -39,14 +47,15 @@ function snakeGame() {
     }
     item[0] = itemI;
     item[1] = itemJ;
+
    // snakeDivGrid[i][j].style.backgroundColor = "red";
   //  snakeGrid[i][j] = 1;
     running = true;
     let tail = [];
     tail[0] = [posI, posJ];
 
-    let interval = setInterval(function() {
-        if(dir === 187) {
+    interval = setInterval(function() {
+        if(!running) {
             clearInterval(interval);
         }
 
@@ -61,31 +70,34 @@ function snakeGame() {
             }
         }
 
-        for(let i = 0; i < len; i++) {
+
+        for(let i = 1; i < len; i++) {
             let x = tail[i];
             snakeDivGrid[x[0]][x[1]].style.backgroundColor = "white";
         }
-        let temp = [tail[len - 1][0], tail[len - 1][1]];
+        snakeDivGrid[tail[0][0]][tail[0][1]].style.backgroundColor = "grey";
+
+        let temp = [tail[0][0], tail[0][1]];
         let x = [temp[0], temp[1]];
         switch(dir) {
             case 0: {
                 x[0] = (x[0] + height - 1) % height;
-                tail[len - 1] = x;
+                tail[0] = x;
                 break;
             }
             case 1: {
                 x[1] = (x[1] + width - 1) % width;
-                tail[len - 1] = x;
+                tail[0] = x;
                 break;
             }
             case 2: {
                 x[0] = (x[0] + height + 1) % height;
-                tail[len - 1] = x;
+                tail[0] = x;
                 break;
             }
             case 3: {
                 x[1] = (x[1] + width + 1) % width;
-                tail[len - 1] = x;
+                tail[0] = x;
                 break;
             }
             default: {
@@ -93,13 +105,27 @@ function snakeGame() {
             }
         }
 
-        for(let i = len - 2; i >= 0; i--) {
+        for(let i = 1; i < len; i++) {
             let t = tail[i];
             tail[i] = temp;
             temp = t;
         }
 
-        if(tail[len - 1][0] === item[0] && tail[len - 1][1] === item[1]) {
+        for(let i = 0; i < len; i++) {
+            for(let j = i+1; j < len; j++) {
+                let pos1 = tail[i];
+                let pos2 = tail[j];
+                if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
+                    clearInterval(interval);
+                    running = false;
+                    document.getElementById("snakeText").innerHTML = "<span style='color: red'>Game over!</span>" + text;
+                    $("#snakeOverlay").animate({opacity: 1}, 500);
+                    return;
+                }
+            }
+        }
+
+        if(tail[0][0] === item[0] && tail[0][1] === item[1]) {
             let generated = true;
             do {
                 generated = true;
@@ -116,7 +142,7 @@ function snakeGame() {
             item[0] = itemI;
             item[1] = itemJ;
 
-            tail.push(temp);
+            tail[len] = temp;
         }
     }, int);
 }
@@ -146,7 +172,10 @@ document.addEventListener('keydown', function(e) {
             snakeGame();
         }
     }
-    if(e.key === "x") {
-        dir = 187;
+    if(e.key === "Escape") {
+        clearInterval(interval);
+        document.getElementById("snakeText").innerHTML = text;
+        $("#snakeOverlay").animate({opacity: 1}, 500);
+        running = false;
     }
 });
