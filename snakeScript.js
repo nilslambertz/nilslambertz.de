@@ -167,9 +167,9 @@ document.addEventListener('keydown', function(e) {
         running = false;
     }
 
-    if(!isInView($("#snakeGrid"))) {
+    /*if(!isInView($("#snakeGrid"))) {
         return;
-    }
+    }*/
 
     if(e.key === "w") {
         dir = 0;
