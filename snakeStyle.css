@@ -32,7 +32,7 @@
 
 #snakeKeys {
     position: absolute;
-    margin-top: calc((30vw + 19px) / 2 + 15px);
+    margin-top: calc(30vw + 49px);
     width: calc(60vw + 40px);
     height: 30px;
     text-align: center;

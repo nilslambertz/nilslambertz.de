@@ -2,7 +2,7 @@ let colors = ["#ff00e6", "#ff0000", "#f87100", "#0b7a00", "#00f1f1"];
 let usedColors = ["#255583"]
 let s = 0;
 document.addEventListener('keydown', function(e) {
-    if(e.key === "1" && s === 0) {
+    if(e.key === "1") {
         s = 1;
     } else {
         if(e.key === "3" && (s === 1 || s === 2)) {
