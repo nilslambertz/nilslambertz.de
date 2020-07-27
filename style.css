@@ -112,23 +112,24 @@ a {
 }
 
 .linkDiv {
-    background-color: #016701;
+    background-color: #076907;
     height: 60px;
     line-height: 60px;
     font-size: 30px;
     vertical-align: middle;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 15px;
+    border-radius: 2px;
     border: 1px solid white;
     color: #bebebe;
     margin-bottom: 30px;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .linkDiv:hover {
+    background-color: #11a711;
     color: white;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .socialsDiv {
