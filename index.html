@@ -14,15 +14,13 @@
 </head>
 <body>
     <noscript>
-        <div style="position: fixed; z-index: -1"><h1><span style="color: red">Bitte JavaScript aktivieren!</span></h1></div>
+        <div style="position: fixed; z-index: 10"><h1><span style="color: red">Bitte JavaScript aktivieren!</span></h1></div>
     </noscript>
     <div id="blackDiv"></div>
     <div id="shadow"></div>
     <div id="content">
         <div id="welcomeDiv" class="contentDiv">
-            <div id="welcomeTitle" class="titleDiv">
-                <div id="titleText"></div><div id="typingDiv">_</div>
-            </div>
+            <div id="welcomeTitle" class="titleDiv">nilslambertz.de</div>
             <div id="welcomeSocials" class="socialsDiv" style="opacity: 0">
                 <a href="https://github.com/nilslambertz/" target="_blank">
                     <img src="githubLogo.png" alt="Github">
@@ -31,19 +29,21 @@
             <div id="welcomeDescription" class="descriptionDiv" style="opacity: 0">
                 Welcome!
             </div>
-            <div id="welcomeScrollDown" class="scrollDown">
+            <a class="scrollDown" href="#arraySortDiv">
                 <img src="scrollDownArrowWhite.png" style="height: 50px; width: 50px" alt="Runterscrollen"/>
-            </div>
+            </a>
         </div>
 
         <div id="arraySortDiv" class="contentDiv">
+            <iframe src="https://nilslambertz.github.io/SortVisualization/" class="iframe" id="sortIframe"></iframe>
             <div class="opacityDiv">
                 <div id="arraySortTile" class="titleDiv">Sort Visualization</div>
-                <a href="https://nilslambertz.github.io/SortVisualization" target="_blank">
-                    <div id="arraySortLink" class="linkDiv">
-                        website
-                    </div>
+                <a href="https://nilslambertz.github.io/SortVisualization" target="_blank" class="linkDiv linkButton">
+                    website
                 </a>
+                <!--<div id="arrayOpenHere" class="linkDiv linkButton" onclick="openIframe('sortIframe', 'arraySortDiv')">
+                    open here
+                </div>-->
                 <div id="arraySortDescription" class="descriptionDiv">
                     sorting algorithms like <span class="highlightSpan">BubbleSort</span>,
                     <span class="highlightSpan">QuickSort</span> and
@@ -55,26 +55,27 @@
                     </a>
                 </div>
             </div>
-            <div id="arraySortScrollUp" class="scrollUp">
+            <a class="scrollUp" href="#welcomeDiv">
                 <img src="scrollUpArrowWhite.png" alt="Hochscrollen"/>
-            </div>
-            <div id="arraySortScrollDown" class="scrollDown">
+            </a>
+            <a class="scrollDown" href="#snakeDiv" id="scrollToSnake">
                 <img src="scrollDownArrowWhite.png" alt="Runterscrollen"/>
-            </div>
+            </a>
         </div>
 
         <div id="snakeDiv" class="contentDiv">
-            <div id="snakeGrid"></div>
+            <div id="snakeGrid">
+                <div id="snakeKeys">W = up, A = left, S = down, D = right, ESC = stop</div>
+            </div>
             <div id="snakeOverlay" onclick="startGameClick()">
                 <div id="snakeText">
                     Press <span class="highlightSpan">W</span>, <span class="highlightSpan">A</span>,
                     <span class="highlightSpan">S</span> or <span class="highlightSpan">D</span> to start
                 </div>
             </div>
-            <div id="snakeKeys">W = up, A = left, S = down, D = right, ESC = stop</div>
-            <div id="snakeScrollUp" class="scrollUp">
+            <a class="scrollUp" href="#arraySortDiv">
                 <img src="scrollUpArrowWhite.png" alt="Hochscrollen"/>
-            </div>
+            </a>
         </div>
     </div>
 </body>

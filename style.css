@@ -1,8 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
     overflow: auto;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
@@ -16,7 +16,6 @@ html, body {
 body {
     position:fixed;
     left:0;
-    overflow-x: hidden;
     top:0;
     margin: 0;
     padding: 0;
@@ -30,17 +29,19 @@ a {
 }
 
 #content {
-    overflow: auto;
-    overflow-x: hidden;
     width: auto;
+    height: 100%;
 }
 
 #blackDiv {
-    position: fixed;
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: black;
 }
 
@@ -48,6 +49,7 @@ a {
     position: absolute;
     margin-top: calc(100vh - 50px);
     cursor: pointer;
+    height: 50px;
     width: 100%;
     text-align: center;
 }
@@ -80,7 +82,8 @@ a {
     padding: 0;
     right:0;
     bottom:0;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     pointer-events: none;
     background: url("shadow.png") no-repeat center center fixed;
     -webkit-background-size: 100% 100%;
@@ -91,7 +94,7 @@ a {
 
 .contentDiv {
     width: auto;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
     color: white;
@@ -101,18 +104,27 @@ a {
 
 .opacityDiv {
     all: inherit;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background: rgba(0,0,0,0.7);
 }
 
 .titleDiv {
     font-size: 60px;
-    height: 60px;
-    margin-bottom: 40px;
+    line-height: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 80%;
+    display: inline-block;
 }
 
 .linkDiv {
+    margin-bottom: 30px;
+}
+
+.linkButton {
     background-color: #076907;
+    cursor: pointer;
     height: 60px;
     line-height: 60px;
     font-size: 30px;
@@ -122,18 +134,17 @@ a {
     border-radius: 2px;
     border: 1px solid white;
     color: #bebebe;
-    margin-bottom: 30px;
     transition: color 0.3s, background-color 0.3s;
 }
 
-.linkDiv:hover {
+.linkButton:hover {
     background-color: #11a711;
     color: white;
     transition: color 0.3s, background-color 0.3s;
 }
 
 .socialsDiv {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .socialsDiv img {
@@ -145,28 +156,27 @@ a {
 .descriptionDiv {
     font-size: 20px;
     margin-bottom: 30px;
+    text-align: center;
+    max-width: 80%;
 }
 
 .highlightSpan {
     color: #ff8d1f;
 }
 
+.iframe {
+    border: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+}
+
 #welcomeDiv {
     background-color: #255583;
     transition: background-color 1s;
-}
-
-#titleText {
-    display: inline-block;
-    height: 100%;
-    font-size: 60px;
-}
-
-#typingDiv {
-    display: inline-block;
-    height: 100%;
-    font-size: 60px;
-    overflow: hidden;
 }
 
 #arraySortDiv {
@@ -183,11 +193,20 @@ a {
 
 
 @media (pointer:none), (pointer:coarse) {
+    #content {
+        overflow-x: hidden;
+    }
+
     #snakeDiv {
         display: none;
     }
 
     #arraySortScrollDown {
+        display: none;
+    }
+
+
+    #scrollToSnake {
         display: none;
     }
 }

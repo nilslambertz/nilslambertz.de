@@ -1,51 +1,47 @@
+let inView = false;
+let currentIframe = null;
+
 $('document').ready(function () {
-    let title = "nilslambertz.de";
-    let titleArr = title.split('');
-
-    $("#blackDiv").animate({opacity: 0}, 500);
-
+    $("#blackDiv").animate({opacity: 0}, 1000);
     setTimeout(function() {
-        /* Scroll to snake */
-        //document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
-        /* */
+        $("#blackDiv").css("display", "none");
+    },1000);
 
-        document.body.removeChild(document.getElementById("blackDiv"));
-        let int = setInterval(function () {
-            let typingDiv = $("#typingDiv");
-            if (titleArr.length === 0) {
-                clearInterval(int);
-                typingDiv.animate({opacity: 0, width: 0}, 500);
-                $("#welcomeDescription").delay(500).animate({opacity: 1}, 500);
-                $("#welcomeSocials").delay(500).animate({opacity: 1}, 500);
-                return;
-            }
-            let op = 0;
-            if (document.getElementById("typingDiv").style.opacity === "0") {
-                op = 1;
-            }
-            typingDiv.animate({opacity: op}, 200);
-
-            let span = document.createElement("span");
-            span.style.opacity = 0;
-            span.innerText = titleArr.shift();
-            document.getElementById("titleText").append(span);
-            $(span).animate({opacity: 1}, 100);
-        }, 300);
-
-        $("#welcomeScrollDown").on('click', function (e) {
-            document.querySelector('#arraySortDiv').scrollIntoView({behavior: 'smooth'})
-        })
-
-        $("#arraySortScrollDown").on('click', function (e) {
-            document.querySelector('#snakeDiv').scrollIntoView({behavior: 'smooth'})
-        })
-
-        $("#arraySortScrollUp").on('click', function (e) {
-            document.querySelector('#welcomeDiv').scrollIntoView({behavior: 'smooth'})
-        })
-
-        $("#snakeScrollUp").on('click', function (e) {
-            document.querySelector('#arraySortDiv').scrollIntoView({behavior: 'smooth'})
-        })
-    }, 500);
+    $("#welcomeDescription").animate({opacity: 1}, 1000);
+    $("#welcomeSocials").animate({opacity: 1}, 1000);
 });
+
+
+function openIframe(iframeID, divID) {
+    let iframe = document.getElementById(iframeID);
+    let div = document.getElementById(divID);
+    let content = document.getElementById("content");
+    document.querySelector('#' + divID).scrollIntoView({behavior: 'smooth'})
+    document.getElementById("blackDiv").style.display = "inline";
+    setTimeout(function() {
+        content.innerHTML = "";
+        content.append(div);
+        $("#blackDiv").animate({opacity: 1}, 700);
+        $("#blackDiv").animate({opacity: 0}, 700);
+        setTimeout(function() {
+            iframe.style.visibility = "visible";
+            iframe.style.opacity = "1";
+            currentIframe = iframeID;
+            inView = true;
+        }, 700);
+        setTimeout(function() {
+            $("#blackDiv").css("display", "none");
+        },1400);
+    }, 300);
+}
+
+function closeIframe() {
+    alert("XD");
+    console.log("XDD");
+    inView = false;
+    let elem = document.getElementById(currentIframe);
+    elem.style.opacity = "0";
+    setTimeout(function () {
+        elem.style.visibility = "hidden";
+    }, 1000);
+}
