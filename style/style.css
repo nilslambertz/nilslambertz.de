@@ -84,7 +84,7 @@ a {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    background: url("images/shadow.png") no-repeat center center fixed;
+    background: url("../images/shadow.png") no-repeat center center fixed;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
@@ -179,7 +179,7 @@ a {
 }
 
 #arraySortDiv {
-    background: url("images/arraySortingPicture.png") no-repeat center center;
+    background: url("../images/arraySortingPicture.png") no-repeat center center;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
