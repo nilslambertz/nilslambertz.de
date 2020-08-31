@@ -1,4 +1,5 @@
 html, body {
+    position:fixed;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -6,41 +7,122 @@ html, body {
     overflow: auto;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-}
-
-body {
-    position:fixed;
-    left:0;
-    top:0;
-    right:0;
-    bottom:0;
 }
 
 a {
     text-decoration: none;
-    color: white;
 }
 
-#content {
+/* Background-Shadow */
+
+#shadow {
+    position: fixed;
+    left:0;
+    top:0;
+    margin: 0;
+    padding: 0;
+    right:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background: url("../images/shadow.png") no-repeat center center fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+/* Content-area */
+
+#content { /* Content-Div with full-page-elems inside */
     overflow: auto;
 }
 
-#blackDiv {
-    position: absolute;
-    z-index: 10;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
+.contentElem { /* element of content-div */
+    width: auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.opacityDiv { /* layer above background-images for opacity */
+    all: inherit;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background: rgba(0,0,0,0.7);
 }
+
+.elemSection { /* section of element */
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.titleDiv { /* title of element */
+    font-size: 60px;
+    line-height: 60px;
+    display: inline-block;
+}
+
+.linkButton {
+    background-color: #076907;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    color: #bebebe;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.linkButton:hover {
+    background-color: #11a711;
+    cursor: pointer;
+    color: white;
+}
+
+.descriptionDiv {
+    font-size: 20px;
+}
+
+.highlightSpan { /* highlighted part of description */
+    color: #ff8d1f;
+}
+
+.socialsDiv img {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+
+#welcomeDiv {
+    background-color: #255583;
+    transition: background-color 1s;
+}
+
+#arraySortDiv {
+    background: url("../images/arraySortingPicture.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+#snakeDiv {
+    background-color: #ff5900;
+}
+
+
+
+/* Scroll-Arrows */
 
 .scroll {
     position: absolute;
@@ -72,113 +154,7 @@ a {
     margin-top: calc(50px - 100vh);
 }
 
-#shadow {
-    position: fixed;
-    left:0;
-    top:0;
-    margin: 0;
-    padding: 0;
-    right:0;
-    bottom:0;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
-    background: url("../images/shadow.png") no-repeat center center fixed;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-}
-
-.contentDiv {
-    width: auto;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.opacityDiv {
-    all: inherit;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.7);
-}
-
-.titleDiv {
-    font-size: 60px;
-    line-height: 60px;
-    margin-bottom: 30px;
-    text-align: center;
-    max-width: 80%;
-    display: inline-block;
-}
-
-.linkDiv {
-    margin-bottom: 30px;
-}
-
-.linkButton {
-    background-color: #076907;
-    cursor: pointer;
-    height: 60px;
-    line-height: 60px;
-    font-size: 30px;
-    vertical-align: middle;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
-    border: 1px solid white;
-    color: #bebebe;
-    transition: color 0.3s, background-color 0.3s;
-}
-
-.linkButton:hover {
-    background-color: #11a711;
-    color: white;
-    transition: color 0.3s, background-color 0.3s;
-}
-
-.socialsDiv {
-    margin-bottom: 30px;
-}
-
-.socialsDiv img {
-    height: 50px;
-    width: 50px;
-    vertical-align: middle;
-}
-
-.descriptionDiv {
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    max-width: 80%;
-}
-
-.highlightSpan {
-    color: #ff8d1f;
-}
-
-#welcomeDiv {
-    background-color: #255583;
-    transition: background-color 1s;
-}
-
-#arraySortDiv {
-    background: url("../images/arraySortingPicture.png") no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-}
-
-#snakeDiv {
-    background-color: #ff5900;
-}
-
+/* mobile */
 
 @media (pointer:none), (pointer:coarse) {
     #content {
