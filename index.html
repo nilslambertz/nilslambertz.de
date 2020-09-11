@@ -13,16 +13,15 @@
     <script src="scripts/eastereggScript.js" defer></script>
 </head>
 <body>
-    <noscript>
-        <div style="position: fixed; z-index: 10"><h1><span style="color: red">Bitte JavaScript aktivieren!</span></h1></div>
-    </noscript>
     <div id="shadow"></div>
-    <div id="content">
         <div id="welcomeDiv" class="contentElem">
             <div id="welcomeTitle" class="elemSection titleDiv">nilslambertz.de</div>
-            <div id="welcomeSocials" class="elemSection socialsDiv" style="opacity: 0">
+            <noscript>
+                <h1><span style="color: orange">Bitte JavaScript aktivieren!</span></h1>
+            </noscript>
+            <div class="elemSection elemLinks">
                 <a href="https://github.com/nilslambertz/" target="_blank">
-                    <img src="images/githubLogo.png" alt="Github">
+                    <div class="linkButton"><img src="images/githubLogo.png" alt="Github Repo"> github</div>
                 </a>
             </div>
             <div id="welcomeDescription" class="elemSection descriptionDiv" style="opacity: 0">
@@ -34,21 +33,18 @@
         </div>
 
         <div id="arraySortDiv" class="contentElem">
-            <div class="opacityDiv">
-                <div id="arraySortTile" class="elemSection titleDiv">Sort Visualization</div>
-                <a href="https://nilslambertz.github.io/SortVisualization" target="_blank" class="elemSection linkButton">
-                    website
-                </a>
-                <div id="arraySortDescription" class="elemSection descriptionDiv">
-                    sorting algorithms like <span class="highlightSpan">BubbleSort</span>,
-                    <span class="highlightSpan">QuickSort</span> and
-                    <span class="highlightSpan">MergeSort</span> visualized with pausable animations
-                </div>
-                <div id="arraySortSocials" class="elemSection socialsDiv">
-                    <a href="https://github.com/nilslambertz/SortVisualization" target="_blank">
-                        <img src="images/githubLogo.png" alt="Github Repo">
-                    </a>
-                </div>
+            <div id="arraySortTile" class="elemSection titleDiv">Sort Visualization</div>
+            <div class="elemSection elemLinks">
+                <a href="https://nilslambertz.github.io/SortVisualization" target="_blank">
+                    <div class="linkButton">demo</div></a>
+                <a href="https://github.com/nilslambertz/SortVisualization" target="_blank">
+                <div class="linkButton"><img src="images/githubLogo.png" alt="Github Repo"> repo</div>
+            </a>
+            </div>
+            <div id="arraySortDescription" class="elemSection descriptionDiv">
+                sorting algorithms like <span class="highlightSpan">BubbleSort</span>,
+                <span class="highlightSpan">QuickSort</span> and
+                <span class="highlightSpan">MergeSort</span> visualized with pausable animations
             </div>
             <a class="scroll scrollUp" href="#welcomeDiv">
                 <img src="images/scrollUpArrowWhite.png" alt="Hochscrollen"/>
@@ -60,13 +56,13 @@
 
         <div id="snakeDiv" class="contentElem">
             <div id="snakeGrid">
-                <div id="snakeKeys">W = up, A = left, S = down, D = right, ESC = stop</div>
-            </div>
-            <div id="snakeOverlay" onclick="startGameClick()">
-                <div id="snakeText">
-                    Press <span class="highlightSpan">W</span>, <span class="highlightSpan">A</span>,
-                    <span class="highlightSpan">S</span> or <span class="highlightSpan">D</span> to start
+                <div id="snakeOverlay" onclick="startGameClick()">
+                    <div id="snakeText">
+                        Press <span class="highlightSpan">W</span>, <span class="highlightSpan">A</span>,
+                        <span class="highlightSpan">S</span> or <span class="highlightSpan">D</span> to start
+                    </div>
                 </div>
+                <div id="snakeKeys">W = up, A = left, S = down, D = right, ESC = stop</div>
             </div>
             <a class="scroll scrollUp" href="#arraySortDiv">
                 <img src="images/scrollUpArrowWhite.png" alt="Hochscrollen"/>
