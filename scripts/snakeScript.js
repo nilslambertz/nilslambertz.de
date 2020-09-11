@@ -121,7 +121,7 @@ function snakeGame() {
                 if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
                     clearInterval(interval);
                     running = false;
-                    document.getElementById("snakeOverlay").style.display = "table";
+                    document.getElementById("snakeOverlay").style.display = "grid";
                     document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
                     $("#snakeOverlay").animate({opacity: 1}, 500);
                     return;
@@ -161,15 +161,11 @@ document.addEventListener('keydown', function(e) {
     if(e.key === "Escape") {
         if(!running) return;
         clearInterval(interval);
-        document.getElementById("snakeOverlay").style.display = "table";
+        document.getElementById("snakeOverlay").style.display = "grid";
         document.getElementById("snakeText").innerHTML = text;
         $("#snakeOverlay").animate({opacity: 1}, 500);
         running = false;
     }
-
-    /*if(!isInView($("#snakeGrid"))) {
-        return;
-    }*/
 
     if(e.key === "w") {
         dir = 0;
@@ -196,7 +192,3 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-
-function isInView(elem){
-    return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
-}
