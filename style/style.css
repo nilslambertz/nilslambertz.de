@@ -1,17 +1,12 @@
 html, body {
-    position:fixed;
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow: visible;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
     user-select: none;
-}
-
-a {
-    text-decoration: none;
 }
 
 /* Background-Shadow */
@@ -20,12 +15,9 @@ a {
     position: fixed;
     left:0;
     top:0;
-    margin: 0;
-    padding: 0;
-    right:0;
-    bottom:0;
     height: 100%;
     width: 100%;
+    z-index: 10;
     pointer-events: none;
     background: url("../images/shadow.png") no-repeat center center fixed;
     -webkit-background-size: 100% 100%;
@@ -34,27 +26,14 @@ a {
     background-size: 100% 100%;
 }
 
-/* Content-area */
-
-#content { /* Content-Div with full-page-elems inside */
-    overflow: auto;
-}
-
 .contentElem { /* element of content-div */
-    width: auto;
+    position: relative;
     height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    display: flex;
     flex-direction: column;
-}
-
-.opacityDiv { /* layer above background-images for opacity */
-    all: inherit;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.7);
 }
 
 .elemSection { /* section of element */
@@ -69,27 +48,41 @@ a {
     display: inline-block;
 }
 
+.elemLinks a {
+    margin: 0 10px;
+}
+
 .linkButton {
-    background-color: #076907;
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(0, 69, 115);
     height: 60px;
     line-height: 60px;
     font-size: 30px;
     vertical-align: middle;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 2px;
+    padding: 0 20px;
     border: 1px solid white;
     color: #bebebe;
     transition: color 0.3s, background-color 0.3s;
 }
 
+.linkButton img {
+    position: relative;
+    top: -3px;
+    left: -5px;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+
 .linkButton:hover {
-    background-color: #11a711;
+    background-color: rgb(0, 103, 172);
     cursor: pointer;
     color: white;
 }
 
 .descriptionDiv {
+    padding: 10px;
     font-size: 20px;
 }
 
@@ -104,7 +97,7 @@ a {
 }
 
 #welcomeDiv {
-    background-color: #255583;
+    background-color: rgb(0, 69, 115);
     transition: background-color 1s;
 }
 
@@ -114,6 +107,11 @@ a {
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
+}
+
+#arraySortDiv .descriptionDiv {
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
 }
 
 #snakeDiv {
@@ -147,20 +145,16 @@ a {
 }
 
 .scrollDown {
-    margin-top: calc(100vh - 50px);
+    bottom: 0;
 }
 
 .scrollUp {
-    margin-top: calc(50px - 100vh);
+    top: 0;
 }
 
 /* mobile */
 
 @media (pointer:none), (pointer:coarse) {
-    #content {
-        overflow-x: hidden;
-    }
-
     #snakeDiv {
         display: none;
     }
@@ -168,7 +162,6 @@ a {
     #arraySortScrollDown {
         display: none;
     }
-
 
     #scrollToSnake {
         display: none;
