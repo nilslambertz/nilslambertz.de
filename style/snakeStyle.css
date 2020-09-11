@@ -17,7 +17,7 @@
     background-color: rgba(84,84,84, 0.8);
     font-size: 50px;
     text-align: center;
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, opacity 0.5s;
 }
 
 #snakeOverlay:hover {
@@ -33,4 +33,18 @@
     text-align: center;
     line-height: 30px;
     background-color: rgba(0,0,0,0.4);
+}
+
+#snakeOverlay.invisible {
+    opacity: 0;
+    transition: background-color 0.4s, opacity 0.5s;
+}
+
+#snakeOverlay.visible {
+    opacity: 1;
+    transition: background-color 0.4s, opacity 0.5s;
+}
+
+#snakeOverlay.invisible:hover {
+    cursor: default;
 }

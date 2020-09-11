@@ -11,9 +11,7 @@ let interval = null;
 let text = "";
 setupSnakeGrid(width, height);
 
-$('document').ready(function() {
-    text = document.getElementById("snakeText").innerHTML;
-})
+text = document.getElementById("snakeText").innerHTML;
 
 function setupSnakeGrid(width, height) {
     for (let i = 0; i < height; i++) {
@@ -32,10 +30,8 @@ function setupSnakeGrid(width, height) {
 
 // zeile, spalte
 function snakeGame() {
-    $("#snakeOverlay").animate({opacity: 0}, 500);
-    setTimeout(function() {
-        document.getElementById("snakeOverlay").style.display = "none";
-    })
+    document.getElementById("snakeOverlay").classList.remove("visible");
+    document.getElementById("snakeOverlay").classList.add("invisible");
 
     //let i = Math.floor(Math.random() * width);
     //let j = Math.floor(Math.random() * height);
@@ -51,8 +47,6 @@ function snakeGame() {
     item[0] = itemI;
     item[1] = itemJ;
 
-   // snakeDivGrid[i][j].style.backgroundColor = "red";
-  //  snakeGrid[i][j] = 1;
     running = true;
     let tail = [];
     tail[0] = [posI, posJ];
@@ -121,9 +115,9 @@ function snakeGame() {
                 if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
                     clearInterval(interval);
                     running = false;
-                    document.getElementById("snakeOverlay").style.display = "grid";
+                    document.getElementById("snakeOverlay").classList.remove("invisible");
+                    document.getElementById("snakeOverlay").classList.add("visible");
                     document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
-                    $("#snakeOverlay").animate({opacity: 1}, 500);
                     return;
                 }
             }
@@ -161,9 +155,9 @@ document.addEventListener('keydown', function(e) {
     if(e.key === "Escape") {
         if(!running) return;
         clearInterval(interval);
-        document.getElementById("snakeOverlay").style.display = "grid";
+        document.getElementById("snakeOverlay").classList.remove("invisible");
+        document.getElementById("snakeOverlay").classList.add("visible");
         document.getElementById("snakeText").innerHTML = text;
-        $("#snakeOverlay").animate({opacity: 1}, 500);
         running = false;
     }
 
