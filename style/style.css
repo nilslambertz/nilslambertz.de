@@ -90,15 +90,13 @@ html, body {
     color: #ff8d1f;
 }
 
-.socialsDiv img {
-    height: 50px;
-    width: 50px;
-    vertical-align: middle;
-}
-
 #welcomeDiv {
     background-color: rgb(0, 69, 115);
     transition: background-color 1s;
+}
+
+#welcomeLinks {
+    opacity: 0;
 }
 
 #arraySortDiv {
