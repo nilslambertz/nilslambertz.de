@@ -96,7 +96,11 @@ html, body {
 }
 
 #welcomeLinks {
-    opacity: 0;
+    animation: fadein 2s;
+}
+
+#welcomeDescription {
+    animation: fadein 4s;
 }
 
 #arraySortDiv {
@@ -148,6 +152,11 @@ html, body {
 
 .scrollUp {
     top: 0;
+}
+
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
 }
 
 /* mobile */
