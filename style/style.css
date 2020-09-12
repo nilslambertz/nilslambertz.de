@@ -87,6 +87,7 @@ html, body {
 }
 
 .highlightSpan { /* highlighted part of description */
+    font-weight: bold;
     color: #ff8d1f;
 }
 
@@ -109,6 +110,15 @@ html, body {
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
+}
+
+#arraySortDiv .linkButton {
+    color: black;
+    background-color: #ff6f00;
+}
+
+#arraySortDiv .linkButton:hover {
+    background-color: #ff9900;
 }
 
 #arraySortDiv .descriptionDiv {
