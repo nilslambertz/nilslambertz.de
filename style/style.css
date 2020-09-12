@@ -9,6 +9,14 @@ html, body {
     user-select: none;
 }
 
+html {
+    background-color: black;
+}
+
+body {
+    animation: fadein 2s;
+}
+
 /* Background-Shadow */
 
 #shadow {
@@ -97,11 +105,11 @@ html, body {
 }
 
 #welcomeLinks {
-    animation: fadein 2s;
+    animation: fadein 4s;
 }
 
 #welcomeDescription {
-    animation: fadein 4s;
+    animation: fadein 8s;
 }
 
 #arraySortDiv {
