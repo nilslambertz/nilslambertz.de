@@ -125,8 +125,16 @@ body {
     background-color: #ff6f00;
 }
 
+#arraySortDiv .reactButton {
+    background-color: #0066c8;
+}
+
 #arraySortDiv .linkButton:hover {
     background-color: #ff9900;
+}
+
+#arraySortDiv .reactButton:hover {
+    background-color: #007bee;
 }
 
 #arraySortDiv .descriptionDiv {
