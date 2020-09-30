@@ -142,6 +142,23 @@ body {
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
 }
 
+#mazeSolveDiv {
+    background: url("../images/mazeSolvingPictureNeu.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+#mazeSolveDiv .linkButton {
+    color: white;
+    background-color: #0a4c01;
+}
+
+#mazeSolveDiv .linkButton:hover {
+    background-color: #0b6b00;
+}
+
 #snakeDiv {
     background-color: #ff5900;
 }
