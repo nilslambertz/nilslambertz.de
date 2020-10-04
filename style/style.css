@@ -113,11 +113,8 @@ body {
 }
 
 #arraySortDiv {
-    background: url("../images/arraySortingPicture.png") no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background: url("../images/arraySortingPicture.png") no-repeat fixed center center;
+    background-size: cover;
 }
 
 #arraySortDiv .linkButton {
@@ -143,11 +140,8 @@ body {
 }
 
 #mazeSolveDiv {
-    background: url("../images/mazeSolvingPicture.png") no-repeat center center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background: url("../images/mazeSolvingPicture.png") no-repeat fixed center center;
+    background-size: cover;
 }
 
 #mazeSolveDiv .linkButton {
