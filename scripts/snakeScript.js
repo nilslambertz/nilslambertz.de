@@ -4,6 +4,7 @@ let height = 10;
 let snakeDivGrid = [];
 let snakeGrid = [];
 let item = [];
+let tail = [];
 let dir = 0;
 let running = false;
 let int = 200;
@@ -33,14 +34,12 @@ function snakeGame() {
     document.getElementById("snakeOverlay").classList.remove("visible");
     document.getElementById("snakeOverlay").classList.add("invisible");
 
-    //let i = Math.floor(Math.random() * width);
-    //let j = Math.floor(Math.random() * height);
     let posI = Math.floor(Math.random() * (height - 1));
     let posJ = Math.floor(Math.random() * (width - 1));
 
     let itemI = Math.floor(Math.random() * (height - 1));
     let itemJ = Math.floor(Math.random() * (width - 1));
-    while(itemI === posI || itemJ === posJ) {
+    while(itemI === posI && itemJ === posJ) {
         itemI = Math.floor(Math.random() * (height - 1));
         itemJ = Math.floor(Math.random() * (width - 1));
     }
@@ -48,7 +47,6 @@ function snakeGame() {
     item[1] = itemJ;
 
     running = true;
-    let tail = [];
     tail[0] = [posI, posJ];
 
     interval = setInterval(function() {
