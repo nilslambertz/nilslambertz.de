@@ -10,14 +10,23 @@
     <script src="scripts/script.js" defer></script>
     <script src="scripts/snakeScript.js" defer></script>
     <script src="scripts/eastereggScript.js" defer></script>
+    <noscript>
+        <style>
+            #snakeDiv {
+                display: none;
+            }
+
+            #scrollToSnake {
+                display: none;
+            }
+        </style>
+    </noscript>
+
 </head>
 <body>
     <div id="shadow"></div>
         <div id="welcomeDiv" class="contentElem">
             <div id="welcomeTitle" class="elemSection titleDiv">nilslambertz.de</div>
-            <noscript>
-                <h1><span style="color: orange">Bitte JavaScript aktivieren!</span></h1>
-            </noscript>
             <div class="elemSection elemLinks" id="welcomeLinks">
                 <a href="https://github.com/nilslambertz/" target="_blank">
                     <div class="linkButton"><img src="images/githubLogo.png" alt="Github Repo"> github</div>
