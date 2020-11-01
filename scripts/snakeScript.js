@@ -9,6 +9,7 @@ let itemJ = 0;
 let itemI = 0;
 let dir = 0;
 let running = false;
+let paused = false;
 const int = 200;
 let interval = null;
 const text = document.getElementById("snakeText").innerHTML;;
@@ -30,26 +31,49 @@ function setupSnakeGrid(width, height) {
     }
 }
 
-function snakeGame() {
+function removeOverlay() {
     document.getElementById("snakeOverlay").classList.remove("visible");
     document.getElementById("snakeOverlay").classList.add("invisible");
+}
 
-    let posI = Math.floor(Math.random() * (height - 1));
-    let posJ = Math.floor(Math.random() * (width - 1));
+function startSnakeGame(startNew) {
+    removeOverlay();
 
-    itemI = Math.floor(Math.random() * (height - 1));
-    itemJ = Math.floor(Math.random() * (width - 1));
-    while(itemI === posI && itemJ === posJ) {
+    if(startNew) {
+        let posI = Math.floor(Math.random() * (height - 1));
+        let posJ = Math.floor(Math.random() * (width - 1));
+
         itemI = Math.floor(Math.random() * (height - 1));
         itemJ = Math.floor(Math.random() * (width - 1));
-    }
-    item[0] = itemI;
-    item[1] = itemJ;
+        while (itemI === posI && itemJ === posJ) {
+            itemI = Math.floor(Math.random() * (height - 1));
+            itemJ = Math.floor(Math.random() * (width - 1));
+        }
+        item[0] = itemI;
+        item[1] = itemJ;
 
-    running = true;
-    tail[0] = [posI, posJ];
+        running = true;
+
+        tail = [];
+        tail[0] = [posI, posJ];
+    }
 
     interval = setInterval(snakeStep, int);
+}
+
+function endSnakeGame(finished) {
+    clearInterval(interval);
+    if(finished) {
+        running = false;
+        document.getElementById("snakeOverlay").classList.remove("invisible");
+        document.getElementById("snakeOverlay").classList.add("visible");
+        document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
+    } else {
+        paused = true;
+        document.getElementById("snakeOverlay").classList.remove("invisible");
+        document.getElementById("snakeOverlay").classList.add("visible");
+        document.getElementById("snakeText").innerHTML = "Game paused, press <span class='highlightSpan'>ESC</span> to continue";
+    }
 }
 
 const snakeStep = () => {
@@ -114,11 +138,7 @@ const snakeStep = () => {
             let pos1 = tail[i];
             let pos2 = tail[j];
             if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
-                clearInterval(interval);
-                running = false;
-                document.getElementById("snakeOverlay").classList.remove("invisible");
-                document.getElementById("snakeOverlay").classList.add("visible");
-                document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
+                endSnakeGame(true);
                 return;
             }
         }
@@ -147,42 +167,49 @@ const snakeStep = () => {
 
 function startGameClick() {
     if(!running) {
-        snakeGame();
+        startSnakeGame(true);
     }
 }
 
 document.addEventListener('keydown', function(e) {
     if(e.key === "Escape") {
         if(!running) return;
-        clearInterval(interval);
-        document.getElementById("snakeOverlay").classList.remove("invisible");
-        document.getElementById("snakeOverlay").classList.add("visible");
-        document.getElementById("snakeText").innerHTML = text;
-        running = false;
+        if(!paused) {
+            paused = true;
+            endSnakeGame(false);
+        } else {
+            paused = false;
+            startSnakeGame(false);
+        }
+        return;
     }
 
     if(e.key === "w") {
         dir = 0;
         if(!running) {
-            snakeGame();
+            startSnakeGame(true);
         }
+        return;
     }
     if(e.key === "a") {
         dir = 1;
         if(!running) {
-            snakeGame();
+            startSnakeGame(true);
         }
+        return;
     }
     if(e.key === "s") {
         dir = 2;
         if(!running) {
-            snakeGame();
+            startSnakeGame(true);
         }
+        return;
     }
     if(e.key === "d") {
         dir = 3;
         if(!running) {
-            snakeGame();
+            startSnakeGame(true);
         }
+        return;
     }
 });
