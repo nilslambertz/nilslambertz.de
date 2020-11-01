@@ -1,6 +1,6 @@
 // Setting up snake game
-let width = 20;
-let height = 10;
+const width = 20;
+const height = 10;
 let snakeDivGrid = [];
 let snakeGrid = [];
 let item = [];
@@ -9,12 +9,11 @@ let itemJ = 0;
 let itemI = 0;
 let dir = 0;
 let running = false;
-let int = 200;
+const int = 200;
 let interval = null;
-let text = "";
-setupSnakeGrid(width, height);
+const text = document.getElementById("snakeText").innerHTML;;
 
-text = document.getElementById("snakeText").innerHTML;
+setupSnakeGrid(width, height);
 
 function setupSnakeGrid(width, height) {
     for (let i = 0; i < height; i++) {
