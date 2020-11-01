@@ -61,18 +61,23 @@ function startSnakeGame(startNew) {
     interval = setInterval(snakeStep, int);
 }
 
-function endSnakeGame(finished) {
+function endSnakeGame(finished, crashed) {
     clearInterval(interval);
     if(finished) {
         running = false;
+        let span = "";
+        if(!paused && crashed) {
+            span = "<span style='color: red; font-weight: bold'>Game over!</span>";
+        }
         document.getElementById("snakeOverlay").classList.remove("invisible");
         document.getElementById("snakeOverlay").classList.add("visible");
-        document.getElementById("snakeText").innerHTML = "<span style='color: red; font-weight: bold'>Game over!</span>" + text;
+        document.getElementById("snakeText").innerHTML = span + text;
+        paused = false;
     } else {
         paused = true;
         document.getElementById("snakeOverlay").classList.remove("invisible");
         document.getElementById("snakeOverlay").classList.add("visible");
-        document.getElementById("snakeText").innerHTML = "Game paused, press <span class='highlightSpan'>ESC</span> to continue";
+        document.getElementById("snakeText").innerHTML = "Game paused, press <span class='highlightSpan'>Space</span> to continue";
     }
 }
 
@@ -138,7 +143,7 @@ const snakeStep = () => {
             let pos1 = tail[i];
             let pos2 = tail[j];
             if(pos1[0] === pos2[0] && pos1[1] === pos2[1]) {
-                endSnakeGame(true);
+                endSnakeGame(true, true);
                 return;
             }
         }
@@ -174,42 +179,51 @@ function startGameClick() {
 document.addEventListener('keydown', function(e) {
     if(e.key === "Escape") {
         if(!running) return;
-        if(!paused) {
-            paused = true;
-            endSnakeGame(false);
-        } else {
+        endSnakeGame(true);
+        return;
+    }
+
+    if(e.key === ' ' || e.key === "Spacebar") {
+        if(!running) return;
+
+        e.preventDefault();
+        if(paused) {
             paused = false;
             startSnakeGame(false);
+        } else {
+            endSnakeGame(false);
         }
         return;
     }
 
-    if(e.key === "w") {
-        dir = 0;
-        if(!running) {
-            startSnakeGame(true);
+    if(!paused) {
+        if (e.key === "w") {
+            dir = 0;
+            if (!running) {
+                startSnakeGame(true);
+            }
+            return;
         }
-        return;
-    }
-    if(e.key === "a") {
-        dir = 1;
-        if(!running) {
-            startSnakeGame(true);
+        if (e.key === "a") {
+            dir = 1;
+            if (!running) {
+                startSnakeGame(true);
+            }
+            return;
         }
-        return;
-    }
-    if(e.key === "s") {
-        dir = 2;
-        if(!running) {
-            startSnakeGame(true);
+        if (e.key === "s") {
+            dir = 2;
+            if (!running) {
+                startSnakeGame(true);
+            }
+            return;
         }
-        return;
-    }
-    if(e.key === "d") {
-        dir = 3;
-        if(!running) {
-            startSnakeGame(true);
+        if (e.key === "d") {
+            dir = 3;
+            if (!running) {
+                startSnakeGame(true);
+            }
+            return;
         }
-        return;
     }
 });
