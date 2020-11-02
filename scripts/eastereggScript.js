@@ -9,7 +9,7 @@ document.addEventListener('keydown', function(e) {
             s++;
         } else {
             if(e.key === "7" && s === 3) {
-                animateBackground();
+                changeBackgroundColor();
             } else {
                 s = 0;
             }
