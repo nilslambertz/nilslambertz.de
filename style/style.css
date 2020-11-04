@@ -4,7 +4,7 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: visible;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     scroll-behavior: smooth;
     user-select: none;
 }
@@ -27,11 +27,7 @@ body {
     width: 100%;
     z-index: 1;
     pointer-events: none;
-    background: url("../images/shadow.png") no-repeat center center fixed;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background: radial-gradient(circle farthest-corner at center, rgba(0,0,0,0) 30%, rgba(0,0,0,1));
 }
 
 .contentElem { /* element of content-div */
