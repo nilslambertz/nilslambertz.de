@@ -213,12 +213,20 @@ a {
 /* mobile */
 
 @media (pointer:none), (pointer:coarse) {
+    #shadow {
+        background: radial-gradient(circle farthest-corner at center, rgba(0,0,0,0) 80%, rgba(0,0,0,1));
+    }
+
     #snakeDiv {
         display: none;
     }
 
     .titleDiv {
         font-size: min(10vw, 50px);
+    }
+
+    .scroll span {
+        display: none;
     }
 
     #scrollToSnake {
