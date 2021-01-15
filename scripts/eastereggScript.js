@@ -1,4 +1,9 @@
-let colors = ["#ff00e6", "#ff0000", "#f87100", "#0b7a00", "#00f1f1"];
+let colors = [
+    "#ff00e6",
+    "#ff0000",
+    "#f87100",
+    "#404040",
+    "#6bde04"];
 let usedColors = ["#255583"];
 let s = 0;
 document.addEventListener('keydown', function(e) {
