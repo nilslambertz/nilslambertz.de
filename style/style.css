@@ -105,6 +105,14 @@ body {
     transition: background-color 1s;
 }
 
+#welcomeButton {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+#welcomeButton:hover {
+    background-color: rgba(0,0,0,0.11337) !important;
+}
+
 #welcomeLinks {
     animation: fadein 4s;
 }
