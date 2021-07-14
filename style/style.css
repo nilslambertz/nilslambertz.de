@@ -242,7 +242,7 @@ a {
 
 /* mobile */
 
-@media (pointer:none), (pointer:coarse) {
+@media only screen and (max-width: 600px),(pointer:none), (pointer:coarse) {
     #shadow {
         background: radial-gradient(circle farthest-corner at center, rgba(0,0,0,0) 80%, rgba(0,0,0,1));
     }
