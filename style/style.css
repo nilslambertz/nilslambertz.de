@@ -157,6 +157,20 @@ body {
     background-color: #0b6b00;
 }
 
+#blockchainBackground {
+    background: url("../images/blockchainPicture.png") no-repeat fixed center center;
+    background-size: cover;
+}
+
+#blockchainDiv .linkButton {
+    color: white;
+    background-color: #12595f;
+}
+
+#blockchainDiv .linkButton:hover {
+    background-color: #19767d;
+}
+
 #uebungspunkteBackground {
     background: url("../images/uebungspunktePicture.png") no-repeat fixed center center;
     background-size: cover;
