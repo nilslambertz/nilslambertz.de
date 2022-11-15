@@ -1,3 +1,4 @@
-# [nilslambertz.de](https://nilslambertz.github.io)
+# [nilslambertz.de](https://nilslambertz.de)
+
 Personal, minimalistic website.
 Contains links to my projects and a little Snake-game 🙃
