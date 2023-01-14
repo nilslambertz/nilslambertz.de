@@ -1,11 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "shadow-gradient":
+          "radial-gradient(circle farthest-corner at center, rgba(0,0,0,0) 30%, rgba(0,0,0,1))",
+      },
+    },
   },
   plugins: [],
 };
