@@ -4,17 +4,25 @@ import React from "react";
 
 interface PortfolioElementButtonProps {
   link: PortfolioElementLink;
+  buttonBackgroundColor?: string;
 }
 
 export default function PortfolioElementButton({
   link,
+  buttonBackgroundColor,
 }: PortfolioElementButtonProps) {
+  const bgColor = buttonBackgroundColor ? buttonBackgroundColor : "";
+
   return (
     <a
-      className="px-5 py-2 border border-white text-2xl flex flex-row items-center gap-2 cursor-pointer"
+      className={
+        "relative group px-5 py-2 border border-white text-2xl flex flex-row items-center gap-2 cursor-pointer " +
+        bgColor
+      }
       href={link.url}
       target="_blank"
     >
+      <div className="absolute top-0 left-0 h-full w-full transition-colors bg-white bg-opacity-0 group-hover:bg-opacity-10"></div>
       {link.icon && (
         <>
           {link.icon === "github" && (
