@@ -16,7 +16,7 @@ export default function PortfolioElementButton({
   return (
     <a
       className={
-        "relative group px-5 py-2 border border-white text-2xl flex flex-row items-center gap-2 cursor-pointer " +
+        "relative group px-5 py-2 border border-white text-2xl flex flex-row items-center gap-2 cursor-pointer select-none " +
         bgColor
       }
       href={link.url}
