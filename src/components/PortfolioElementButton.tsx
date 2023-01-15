@@ -28,14 +28,14 @@ export default function PortfolioElementButton({
         <>
           {link.icon === "github" && (
             <Image
-              src="/githubLogo.png"
+              src="githubLogo.png"
               alt="Github"
               width={35}
               height={35}
             ></Image>
           )}
           {link.icon === "mail" && (
-            <Image src="/email.svg" alt="E-Mail" width={35} height={35}></Image>
+            <Image src="email.svg" alt="E-Mail" width={35} height={35}></Image>
           )}
         </>
       )}

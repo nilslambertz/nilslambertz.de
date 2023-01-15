@@ -42,7 +42,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
     title: "sorting algorithms",
     description:
       "sorting algorithms like BubbleSort, QuickSort and MergeSort visualized with pausable animations",
-    backgroundImage: "/sorting-algorithms.png",
+    backgroundImage: "sorting-algorithms.png",
     buttonBackgroundColor: "bg-[#ff6f00]",
     highlightedWords: ["BubbleSort", "QuickSort", "MergeSort"],
     textHighlightColor: "text-[#ff6f00]",
@@ -62,7 +62,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
     title: "pathfinding algorithms",
     description:
       "pathfinding algorithms like A*, Dijkstra and Greedy visualized",
-    backgroundImage: "/pathfinding-algorithms.png",
+    backgroundImage: "pathfinding-algorithms.png",
     extraClasses: "!bg-opacity-90",
     buttonBackgroundColor: "bg-[#0a4c01]",
     highlightedWords: ["A*", "Dijkstra", "Greedy"],
@@ -82,7 +82,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
   {
     title: "blockchain visualizer",
     description: "introduction to Blockchains through an interactive example",
-    backgroundImage: "/blockchain-demo.png",
+    backgroundImage: "blockchain-demo.png",
     buttonBackgroundColor: "bg-[#12595f]",
     highlightedWords: ["Blockchains"],
     textHighlightColor: "text-[#0db1bf]",
@@ -101,7 +101,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
   {
     title: "mobile app",
     description: "react native app to keep track of classes and exercises",
-    backgroundImage: "/mobile-app.png",
+    backgroundImage: "mobile-app.png",
     buttonBackgroundColor: "bg-[#a31dac]",
     highlightedWords: ["classes", "exercises"],
     textHighlightColor: "text-[#ed03fc]",
