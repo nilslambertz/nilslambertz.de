@@ -50,7 +50,7 @@ export default function PortfolioElement({
           elementTitle={nextElementTitle}
         ></PortfolioElementArrowLink>
       )}
-      <span className="text-5xl">{element.title}</span>
+      <span className="text-5xl text-center">{element.title}</span>
       <div className="flex flex-row gap-5">
         {element.links?.map((link, index) => (
           <PortfolioElementButton
@@ -61,7 +61,7 @@ export default function PortfolioElement({
         ))}
       </div>
       {element.description && (
-        <div className="flex flex-row flex-wrap text-xl">
+        <div className="flex flex-row flex-wrap justify-center text-xl items-center">
           {getHighlightedDescription(
             element.description,
             element.highlightedWords ?? [],
