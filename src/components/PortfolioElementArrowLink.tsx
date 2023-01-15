@@ -24,9 +24,7 @@ export default function PortfolioElementArrowLink({
       </span>
       <Image
         src={
-          direction === "up"
-            ? "/scrollUpArrowWhite.png"
-            : "/scrollDownArrowWhite.png"
+          direction === "up" ? "/scroll-up-arrow.png" : "/scroll-down-arrow.png"
         }
         alt={direction === "up" ? "Up" : "Down"}
         width={40}
