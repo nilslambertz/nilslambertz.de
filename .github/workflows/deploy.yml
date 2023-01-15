@@ -8,6 +8,12 @@ jobs:
       - name: Get code
         uses: actions/checkout@v2
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run build
+
       - name: Sync files
         uses: Creepios/sftp-action@v1.0.3
         with:
@@ -15,5 +21,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
-          localPath: "./"
+          localPath: "./out"
           remotePath: "./"
