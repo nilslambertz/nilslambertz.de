@@ -21,6 +21,7 @@ export default function PortfolioElementButton({
       }
       href={link.url}
       target="_blank"
+      rel="noreferrer"
     >
       <div className="absolute top-0 left-0 h-full w-full transition-colors bg-white bg-opacity-0 group-hover:bg-opacity-10"></div>
       {link.icon && (
