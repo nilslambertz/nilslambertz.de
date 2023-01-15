@@ -13,8 +13,13 @@ export default function Home() {
       </Head>
       <main className="w-full h-full">
         <ShadowOverlay></ShadowOverlay>
-        {ALL_PORTFOLIO_ELEMENTS.map((elem, index) => (
-          <PortfolioElement key={index} element={elem}></PortfolioElement>
+        {ALL_PORTFOLIO_ELEMENTS.map((elem, index, array) => (
+          <PortfolioElement
+            key={index}
+            element={elem}
+            previousElementTitle={array?.[index - 1]?.title}
+            nextElementTitle={array?.[index + 1]?.title}
+          ></PortfolioElement>
         ))}
       </main>
     </>
