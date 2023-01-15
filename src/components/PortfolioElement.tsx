@@ -26,7 +26,9 @@ export default function PortfolioElement({
     <div
       className={
         "relative w-full h-full text-white flex flex-col items-center justify-center gap-10 " +
-        bgColor
+        bgColor +
+        " " +
+        (element?.extraClasses ? element?.extraClasses : "")
       }
       id={getAnchorIdByTitle(element.title)}
     >
