@@ -3,9 +3,14 @@ import Head from "next/head";
 import PortfolioElement from "@/components/PortfolioElement";
 import ShadowOverlay from "@/components/ShadowOverlay";
 import SnakeGame from "@/components/SnakeGame";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
+  const [jsEnabled, setJsEnabled] = useState(false);
+  useEffect(() => {
+    setJsEnabled(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ export default function Home() {
             ></PortfolioElement>
           ))}
         </React.StrictMode>
-        <SnakeGame></SnakeGame>
+        {jsEnabled && <SnakeGame></SnakeGame>}
       </main>
     </>
   );
