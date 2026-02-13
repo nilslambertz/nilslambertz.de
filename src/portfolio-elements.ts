@@ -1,4 +1,5 @@
 export interface PortfolioElementType {
+  id: string;
   title: string;
   description?: string;
   backgroundImage?: string;
@@ -19,26 +20,24 @@ export interface PortfolioElementLink {
 const DEMO_BUTTON_STRING = "demo";
 const REPO_BUTTON_STRING = "repo";
 
+export const ABOUT_ME_PORTFOLIO_ELEMENT: PortfolioElementType = {
+  id: "home",
+  title: "nilslambertz.de",
+  backgroundColor: "bg-[#004573]",
+  buttonBackgroundColor: "bg-[#004573]",
+  links: [
+    {
+      icon: "github",
+      text: "github",
+      url: "https://github.com/nilslambertz/",
+    }
+  ],
+};
+
 export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
+  ABOUT_ME_PORTFOLIO_ELEMENT,
   {
-    title: "nilslambertz.de",
-    description: "Welcome!",
-    backgroundColor: "bg-[#004573]",
-    buttonBackgroundColor: "bg-[#004573]",
-    links: [
-      {
-        icon: "github",
-        text: "github",
-        url: "https://github.com/nilslambertz/",
-      },
-      {
-        icon: "mail",
-        text: "mail",
-        url: "mailto:mail@nilslambertz.de",
-      },
-    ],
-  },
-  {
+    id: "sorting-algorithms",
     title: "sorting algorithms",
     description:
       "sorting algorithms like BubbleSort, QuickSort and MergeSort visualized with pausable animations",
@@ -59,6 +58,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
     ],
   },
   {
+    id: "pathfinding-algorithms",
     title: "pathfinding algorithms",
     description:
       "pathfinding algorithms like A*, Dijkstra and Greedy visualized",
@@ -80,6 +80,7 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
     ],
   },
   {
+    id: "blockchain-visualizer",
     title: "blockchain visualizer",
     description: "introduction to Blockchains through an interactive example",
     backgroundImage: "blockchain-demo.png",
@@ -99,11 +100,12 @@ export const ALL_PORTFOLIO_ELEMENTS: PortfolioElementType[] = [
     ],
   },
   {
+    id: "mobile-app",
     title: "mobile app",
-    description: "react native app to keep track of classes and exercises",
+    description: "react native app to keep track of Classes and Exercises",
     backgroundImage: "mobile-app.png",
     buttonBackgroundColor: "bg-[#a31dac]",
-    highlightedWords: ["classes", "exercises"],
+    highlightedWords: ["Classes", "Exercises"],
     textHighlightColor: "text-[#ed03fc]",
     links: [
       {

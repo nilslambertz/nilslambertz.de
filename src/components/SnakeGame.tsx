@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {useEffect, useReducer, useRef, useState} from "react";
 
 const NUMBER_OF_ROWS = 10;
 const NUMBER_OF_COLS = 20;
@@ -120,7 +120,7 @@ export default function SnakeGame() {
           blockedPosition[0] === position[0] &&
           blockedPosition[1] === position[1]
       )
-    ) {
+      ) {
       position = getRandomPosition();
     }
 
@@ -220,7 +220,7 @@ export default function SnakeGame() {
 
           updatedGrid[updatedSnakePositions[0][0]][
             updatedSnakePositions[0][1]
-          ] = SnakeGridElementState.SNAKE_HEAD;
+            ] = SnakeGridElementState.SNAKE_HEAD;
           return updatedSnakePositions;
         });
         return direction;
@@ -288,11 +288,12 @@ interface ControlWithLabelProps {
   textLabel: string;
   extraClasses?: string;
 }
+
 function ControlWithLabel({
-  kbdElement,
-  textLabel,
-  extraClasses,
-}: ControlWithLabelProps) {
+                            kbdElement,
+                            textLabel,
+                            extraClasses,
+                          }: ControlWithLabelProps) {
   return (
     <div className={"flex flex-row items-center gap-1 " + extraClasses}>
       <kbd className="cursor-default text-sm border rounded-xl bg-white bg-opacity-20 p-1">
