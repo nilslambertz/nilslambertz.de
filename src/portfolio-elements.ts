@@ -23,7 +23,6 @@ const REPO_BUTTON_STRING = "repo";
 export const ABOUT_ME_PORTFOLIO_ELEMENT: PortfolioElementType = {
   id: "home",
   title: "nilslambertz.de",
-  description: "Welcome!",
   backgroundColor: "bg-[#004573]",
   buttonBackgroundColor: "bg-[#004573]",
   links: [
@@ -31,12 +30,7 @@ export const ABOUT_ME_PORTFOLIO_ELEMENT: PortfolioElementType = {
       icon: "github",
       text: "github",
       url: "https://github.com/nilslambertz/",
-    },
-    {
-      icon: "mail",
-      text: "mail",
-      url: "mailto:mail@nilslambertz.de",
-    },
+    }
   ],
 };
 
