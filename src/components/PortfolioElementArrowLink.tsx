@@ -14,7 +14,7 @@ export default function PortfolioElementArrowLink({
   return (
     <a
       className={
-        "hidden md:flex group absolute z-10 left-0 w-full h-12 flex-row justify-center items-center gap-5 cursor-pointer transition-opacity opacity-50 hover:opacity-100 " +
+        "flex md:hidden group absolute z-10 left-0 w-full h-12 flex-row justify-center items-center gap-5 cursor-pointer transition-opacity opacity-50 hover:opacity-100 " +
         (direction === "up" ? "top-0" : "bottom-0")
       }
       href={"#" + getAnchorIdByTitle(elementTitle)}
