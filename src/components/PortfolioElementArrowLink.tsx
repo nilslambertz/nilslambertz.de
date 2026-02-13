@@ -1,4 +1,4 @@
-import { getAnchorIdByTitle } from "@/functions";
+import {getAnchorIdByTitle} from "@/functions";
 import Image from "next/image";
 import React from "react";
 
@@ -8,9 +8,9 @@ interface PortfolioElementArrowLinkProps {
 }
 
 export default function PortfolioElementArrowLink({
-  direction,
-  elementTitle,
-}: PortfolioElementArrowLinkProps) {
+                                                    direction,
+                                                    elementTitle,
+                                                  }: PortfolioElementArrowLinkProps) {
   return (
     <a
       className={

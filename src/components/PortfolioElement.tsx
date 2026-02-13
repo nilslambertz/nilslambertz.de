@@ -1,5 +1,5 @@
-import { getAnchorIdByTitle } from "@/functions";
-import { PortfolioElementType } from "@/portfolio-elements";
+import {getAnchorIdByTitle} from "@/functions";
+import {PortfolioElementType} from "@/portfolio-elements";
 import React from "react";
 import PortfolioElementArrowLink from "./PortfolioElementArrowLink";
 import PortfolioElementButton from "./PortfolioElementButton";
@@ -11,10 +11,10 @@ interface PortfolioElementProps {
 }
 
 export default function PortfolioElement({
-  element,
-  previousElementTitle,
-  nextElementTitle,
-}: PortfolioElementProps) {
+                                           element,
+                                           previousElementTitle,
+                                           nextElementTitle,
+                                         }: PortfolioElementProps) {
   const bgColor = element?.backgroundColor
     ? element.backgroundColor
     : "bg-black bg-opacity-80";
@@ -35,7 +35,7 @@ export default function PortfolioElement({
       {bgImage && (
         <div
           className="absolute left-0 top-0 -z-10 h-full w-full bg-no-repeat bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: bgImage }}
+          style={{backgroundImage: bgImage}}
         ></div>
       )}
       {previousElementTitle && (

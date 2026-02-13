@@ -5,6 +5,6 @@ interface NavLinkProps {
   link: string;
 }
 
-export default function NavLink({ title, link }: NavLinkProps) {
+export default function NavLink({title, link}: NavLinkProps) {
   return <a className="hover:underline" href={"#" + link}>{title}</a>;
 }

@@ -1,4 +1,4 @@
-import { PortfolioElementLink } from "@/portfolio-elements";
+import {PortfolioElementLink} from "@/portfolio-elements";
 import Image from "next/image";
 import React from "react";
 
@@ -8,9 +8,9 @@ interface PortfolioElementButtonProps {
 }
 
 export default function PortfolioElementButton({
-  link,
-  buttonBackgroundColor,
-}: PortfolioElementButtonProps) {
+                                                 link,
+                                                 buttonBackgroundColor,
+                                               }: PortfolioElementButtonProps) {
   const bgColor = buttonBackgroundColor ? buttonBackgroundColor : "";
 
   return (
@@ -23,7 +23,8 @@ export default function PortfolioElementButton({
       target="_blank"
       rel="noreferrer"
     >
-      <div className="absolute top-0 left-0 h-full w-full transition-colors bg-white bg-opacity-0 group-hover:bg-opacity-10"></div>
+      <div
+        className="absolute top-0 left-0 h-full w-full transition-colors bg-white bg-opacity-0 group-hover:bg-opacity-10"></div>
       {link.icon && (
         <>
           {link.icon === "github" && (
